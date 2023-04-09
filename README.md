@@ -42,9 +42,10 @@ Flow-ul temei:
         iar adresele sursa sunt adresele routerului. Iar in headerul ICMP trebuie setat si tipul corespunzator erorii
     
 3. LPM (Longest prefix match):
-   * Am implementat LPM-ul sub forma unei cautari binare in care elimin treptat ultimii biti din masca cat si din destinatie
-   , iar apoi verific daca operatia ```&``` dintre masca si prefix este egala cu destinatia mea curenta, iar daca da 
-   verificam daca masca mea curenta cea cu bitii eliminati este egala cu masca din tabela daca acestes sunt 
-   egale am gasit cea mai buna ruta , iar daca masca din tabela este mai mare limita superioara devine mijlocul, 
-   respectiv daca este mai mica marginea inferioara devine mijloc + 1.
+   * Am implementat LPM-ul sub forma unei cautari binare in care la inceput cautam pentru toți 32 de biti din masca cat
+     si din destinatie apoi eliminand cate unul de la dreapta la stanga iar in felul acesta obtii longest prefix match
+     , iar apoi verific daca operatia ```&``` dintre masca si prefix este egala cu destinatia mea curenta, iar daca da
+     verificam daca masca mea curenta cea cu bitii eliminati este egala cu masca din tabela daca acestes sunt
+     egale am gasit cea mai buna ruta , iar daca masca din tabela este mai mare limita superioara devine mijlocul,
+     respectiv daca este mai mica marginea inferioara devine mijloc + 1.
           
